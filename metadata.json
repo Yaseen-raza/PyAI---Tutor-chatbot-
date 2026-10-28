@@ -1,0 +1,6 @@
+{
+  "name": "PyAI Tutor - Python & AI Engineering Assistant",
+  "description": "An intelligent Python and AI engineering learning assistant featuring real-time interactive tutoring, code sandbox, Socratic quizzes, live curriculum roadmap, and mastery tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

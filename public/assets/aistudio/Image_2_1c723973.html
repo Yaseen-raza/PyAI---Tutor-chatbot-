@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed":"#e1e0ff","tertiary-fixed":"#acedff","primary-fixed-dim":"#4edea3","primary":"#4edea3","on-tertiary":"#003640","on-surface-variant":"#bbcabf","surface-container-low":"#131b2e","on-background":"#dae2fd","on-secondary-fixed":"#07006c","secondary":"#c0c1ff","on-tertiary-fixed":"#001f26","on-primary-fixed":"#002113","on-primary-container":"#00422b","on-error-container":"#ffdad6","surface":"#0b1326","outline":"#86948a","tertiary-fixed-dim":"#4cd7f6","surface-container-high":"#222a3d","surface-dim":"#0b1326","surface-bright":"#31394d","surface-container":"#171f33","on-secondary-fixed-variant":"#2f2ebe","inverse-surface":"#dae2fd","on-tertiary-container":"#003f4b","on-tertiary-fixed-variant":"#004e5c","error":"#ffb4ab","error-container":"#93000a","surface-container-highest":"#2d3449","surface-variant":"#2d3449","on-primary":"#003824","inverse-primary":"#006c49","on-surface":"#dae2fd","tertiary-container":"#00b2d0","on-error":"#690005","inverse-on-surface":"#283044","primary-fixed":"#6ffbbe","primary-container":"#10b981","secondary-container":"#3131c0","on-secondary":"#1000a9","tertiary":"#4cd7f6","outline-variant":"#3c4a42","background":"#0b1326","surface-container-lowest":"#060e20","on-primary-fixed-variant":"#005236","surface-tint":"#4edea3","on-secondary-container":"#b0b2ff","secondary-fixed-dim":"#c0c1ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-md":"1rem","space-2xl":"3rem","margin":"1rem","gutter":"1.25rem","space-xl":"2rem","margin-tablet":"1.5rem","space-lg":"1.5rem","space-sm":"0.5rem","margin-desktop":"2rem","gutter-desktop":"1.5rem"},"fontFamily":{"body-lg":["Geist"],"body-md":["Geist"],"display-lg-mobile":["Space Grotesk"],"code-block":["JetBrains Mono"],"code-inline":["JetBrains Mono"],"display-lg":["Space Grotesk"],"headline-sm":["Space Grotesk"],"label-sm":["JetBrains Mono"],"headline-md":["Space Grotesk"],"headline-lg":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"label-md":["JetBrains Mono"],"body-sm":["Geist"]},"fontSize":{"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"700"}],"code-block":["13px",{"lineHeight":"22px","fontWeight":"400"}],"code-inline":["12px",{"lineHeight":"16px","fontWeight":"500"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"-0.005em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto px-space-md pt-space-md"><div class="flex items-center justify-between pb-space-sm"><div class="flex items-center gap-space-sm"><img alt="PyAI Tutor Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W9KLOVukg_lagERgOCXs6jaQp6wwJQ6Vo4GPy8bCzv3F-ExguOnFvrXN4j1oIGoAN9CUMFJkYDABP6KQpsGgam264W8phI-URQEr_KociyQONjq9QMvYcS45GzU_1QKtsPdESeVkqbIN7ZgwrTOockmW9-qDUV2UPgRTGoiE-CW2FrbCZHXgY7D1pxj6gT0fnyDkh1IQej6D8I_y-Dof7cAWc0h4khM9QleX4xVj-7DGg99Ooxm3MQhSs"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">PyAI</span></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-surface-container-highest text-tertiary">v2.5</span></div><div class="my-space-md"><a class="w-full flex items-center justify-center gap-space-sm px-space-md py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all hover:bg-primary-fixed-dim" data-path="chat-tutor" href="#"><span class="material-symbols-outlined text-[18px]">add</span><span>New Learning Chat</span></a></div><div class="mb-space-sm"><span class="px-space-xs font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Curriculum</span></div><nav class="flex flex-col gap-1 mb-space-lg" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 transition-colors bg-primary-container text-on-primary-container font-semibold rounded-lg" data-path="chat-tutor" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span>Chat Tutor</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="roadmap-and-progress" href="#"><span class="material-symbols-outlined text-[18px]">alt_route</span><span>Roadmap &amp; Progress</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="interactive-quiz-and-labs" href="#"><span class="material-symbols-outlined text-[18px]">science</span><span>Interactive Quiz &amp; Labs</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-label-md text-label-md" data-path="saved-snippets-and-bookmarks" href="#"><span class="material-symbols-outlined text-[18px]">bookmark</span><span>Saved Snippets &amp; Bookmarks</span></a></nav><div class="flex items-center justify-between px-space-xs mb-space-sm"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Recent Sessions</span><span class="font-label-sm text-label-sm text-on-surface-variant">4 Active</span></div><div class="flex flex-col gap-1 pb-space-md"><div class="group flex items-center justify-between px-space-sm py-2 rounded-lg bg-surface-container/60 hover:bg-surface-container transition-colors cursor-pointer"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-body-sm text-body-sm text-on-surface truncate">List Comprehensions vs Gen</span><span class="font-label-sm text-label-sm text-primary">Python Core</span></div><div class="hidden group-hover:flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] hover:text-on-surface">push_pin</span><span class="material-symbols-outlined text-[16px] hover:text-on-surface">edit</span><span class="material-symbols-outlined text-[16px] hover:text-error">delete</span></div></div><div class="group flex items-center justify-between px-space-sm py-2 rounded-lg hover:bg-surface-container transition-colors cursor-pointer"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-body-sm text-body-sm text-on-surface truncate">Building RAG Pipeline</span><span class="font-label-sm text-label-sm text-tertiary">Vector DB</span></div><div class="hidden group-hover:flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] hover:text-on-surface">push_pin</span><span class="material-symbols-outlined text-[16px] hover:text-on-surface">edit</span><span class="material-symbols-outlined text-[16px] hover:text-error">delete</span></div></div><div class="group flex items-center justify-between px-space-sm py-2 rounded-lg hover:bg-surface-container transition-colors cursor-pointer"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-body-sm text-body-sm text-on-surface truncate">Backpropagation NumPy</span><span class="font-label-sm text-label-sm text-secondary">Neural Nets</span></div><div class="hidden group-hover:flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] hover:text-on-surface">push_pin</span><span class="material-symbols-outlined text-[16px] hover:text-on-surface">edit</span><span class="material-symbols-outlined text-[16px] hover:text-error">delete</span></div></div><div class="group flex items-center justify-between px-space-sm py-2 rounded-lg hover:bg-surface-container transition-colors cursor-pointer"><div class="flex flex-col min-w-0 pr-space-xs"><span class="font-body-sm text-body-sm text-on-surface truncate">Debugging ZeroDivision</span><span class="font-label-sm text-label-sm text-error">Exceptions</span></div><div class="hidden group-hover:flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[16px] hover:text-on-surface">push_pin</span><span class="material-symbols-outlined text-[16px] hover:text-on-surface">edit</span><span class="material-symbols-outlined text-[16px] hover:text-error">delete</span></div></div></div></div><div class="p-space-md bg-surface-container-lowest/80 flex flex-col gap-space-sm"><div class="flex items-center justify-between px-space-xs"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm">🔥</span><span class="font-label-md text-label-md text-on-surface font-semibold">6 Days Streak</span></div><span class="font-label-sm text-label-sm text-primary">+250 XP Today</span></div><div class="flex flex-col gap-1 px-space-xs"><div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant"><span>Execution Quota</span><span>64 / 100 Runs</span></div><div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden"><div class="h-full bg-primary rounded-full" style="width:64%"></div></div></div><div class="pt-space-xs flex items-center justify-between"><a class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span>Settings</span></a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="documentation" href="#">API Docs</a></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm"><img alt="PyAI Tutor Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W9KLOVukg_lagERgOCXs6jaQp6wwJQ6Vo4GPy8bCzv3F-ExguOnFvrXN4j1oIGoAN9CUMFJkYDABP6KQpsGgam264W8phI-URQEr_KociyQONjq9QMvYcS45GzU_1QKtsPdESeVkqbIN7ZgwrTOockmW9-qDUV2UPgRTGoiE-CW2FrbCZHXgY7D1pxj6gT0fnyDkh1IQej6D8I_y-Dof7cAWc0h4khM9QleX4xVj-7DGg99Ooxm3MQhSs"/><span class="font-headline-sm text-headline-sm text-on-surface">PyAI Tutor</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container">Gemini Pro 2.5</span></div><div class="h-5 w-[1px] bg-surface-container-highest"></div><nav class="flex items-center gap-1" data-active-classes="bg-surface-container-highest text-on-surface font-semibold rounded-lg"><a aria-current="page" class="px-space-sm py-1.5 transition-colors bg-surface-container-highest text-on-surface font-semibold rounded-lg" data-path="chat-tutor" href="#">Python Fundamentals</a><a class="px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" data-path="interactive-quiz-and-labs" href="#">ML &amp; Neural Nets</a><a class="px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" data-path="roadmap-and-progress" href="#">RAG &amp; LLMs</a><a class="px-space-sm py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-colors" data-path="saved-snippets-and-bookmarks" href="#">Agentic AI</a></nav></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm px-space-md py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm">Search modules, syntax...</span><kbd class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface">⌘K</kbd></div><div class="flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-low"><span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">API Connected</span></div><button aria-label="Toggle Theme" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">dark_mode</span></button><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="documentation" href="#">Docs</a><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col items-end"><span class="font-label-md text-label-md text-on-surface">Level 2 Apprentice</span><span class="font-label-sm text-label-sm text-tertiary">1,420 XP</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Topic Overview & Metadata Status Bar -->
+<div class="w-full bg-surface-container-low px-space-lg py-space-md shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container-highest text-primary">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-sm text-headline-sm text-on-surface">Topic: Mastering List Comprehensions &amp; Generator Expressions in Python</span>
+<span class="rounded-full bg-secondary-container/60 px-2 py-0.5 font-label-sm text-label-sm text-secondary">Beginner–Intermediate</span>
+</div>
+<div class="flex items-center gap-space-sm pt-0.5">
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[14px]">code_blocks</span>
+                Core Python
+              </span>
+<span class="h-1 w-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Estimated runtime cost: O(N) vs O(1) Memory</span>
+<span class="h-1 w-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                Lab Environment Ready (Python 3.12.3)
+              </span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 rounded-lg bg-surface-container px-3 py-1.5 font-label-md text-label-md text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface" id="bookmarkBtn" onclick="toggleBookmark()">
+<span class="material-symbols-outlined text-[18px]" id="bookmarkIcon">bookmark_border</span>
+<span id="bookmarkText">Bookmark Topic</span>
+</button>
+<div class="flex items-center gap-1 rounded-lg bg-surface-container px-2.5 py-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Session Mastery:</span>
+<span class="font-label-md text-label-md font-semibold text-primary">68%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Split-Pane Workspace -->
+<div class="grid w-full grid-cols-1 gap-space-md p-space-md xl:grid-cols-12">
+<!-- LEFT COLUMN: AI Tutor Interactive Stream (~58%) -->
+<section class="flex flex-col gap-space-md xl:col-span-7">
+<!-- Tutor Conversation Stream Container -->
+<div class="flex flex-col gap-space-md">
+<!-- Message 1: Student Prompt -->
+<div class="flex justify-end">
+<div class="flex max-w-[85%] flex-col gap-1.5">
+<div class="flex items-center justify-end gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>You (Apprentice)</span>
+<span>•</span>
+<span>10:42 AM</span>
+</div>
+<div class="rounded-xl rounded-tr-none bg-surface-container-high p-space-md text-on-surface shadow-sm">
+<p class="font-body-md text-body-md">
+                Can you explain why using a list comprehension is better than a regular <code class="rounded bg-surface-container-highest px-1.5 py-0.5 font-code-inline text-code-inline text-secondary">for</code> loop with <code class="rounded bg-surface-container-highest px-1.5 py-0.5 font-code-inline text-code-inline text-secondary">.append()</code>? And when should I switch to a generator expression instead?
+              </p>
+</div>
+</div>
+</div>
+<!-- Message 2: PyAI Tutor Response (Gemini 2.5 Pro) -->
+<div class="flex w-full flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-on-primary">
+<span class="material-symbols-outlined text-[13px]">smart_toy</span>
+</span>
+<span class="font-semibold text-primary">PyAI Tutor</span>
+<span class="rounded bg-secondary-container px-1.5 py-0.5 font-label-sm text-label-sm text-on-secondary-container">Gemini Pro 2.5</span>
+<span>•</span>
+<span>Just now</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-primary">bolt</span>
+<span>312 tokens</span>
+</div>
+</div>
+<!-- Tutor Card Body -->
+<div class="relative flex flex-col gap-space-md rounded-xl bg-surface-container p-space-lg text-on-surface shadow-md">
+<!-- Pedagogical Narrative -->
+<div class="space-y-space-sm font-body-md text-body-md">
+<p>
+                Great question! While both yield the identical result, Python handles them fundamentally differently under the hood across three major axes: <strong class="text-on-surface">readability</strong>, <strong class="text-on-surface">C-level bytecode speed</strong>, and <strong class="text-on-surface">allocation ergonomics</strong>.
+              </p>
+<div class="grid grid-cols-1 gap-space-sm sm:grid-cols-3">
+<div class="rounded-lg bg-surface-container-low p-3">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">speed</span>
+                    Bytecode Speed
+                  </div>
+<p class="pt-1 font-body-sm text-body-sm text-on-surface-variant">
+                    Avoids overhead of repeated <code class="font-code-inline text-code-inline text-tertiary">LIST_APPEND</code> function calls and attribute lookups in Python's VM.
+                  </p>
+</div>
+<div class="rounded-lg bg-surface-container-low p-3">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm font-semibold text-tertiary">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                    High Readability
+                  </div>
+<p class="pt-1 font-body-sm text-body-sm text-on-surface-variant">
+                    Declares <em>what</em> the list contains declaratively in one readable pass rather than imperative state mutations.
+                  </p>
+</div>
+<div class="rounded-lg bg-surface-container-low p-3">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm font-semibold text-secondary">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+                    Generator Shift
+                  </div>
+<p class="pt-1 font-body-sm text-body-sm text-on-surface-variant">
+                    Switch to generator expressions <code class="font-code-inline text-code-inline text-secondary">(...)</code> when data streams exceed RAM or when iterating only once.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Code Comparison Block -->
+<div class="overflow-hidden rounded-lg bg-surface-container-lowest">
+<div class="flex items-center justify-between bg-surface-container-high px-space-md py-2 text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-error"></span>
+<span class="h-2.5 w-2.5 rounded-full bg-tertiary"></span>
+<span class="h-2.5 w-2.5 rounded-full bg-primary"></span>
+<span class="pl-2 font-label-sm text-label-sm text-on-surface">comprehensions_comparison.py</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1 rounded bg-surface-container px-2 py-1 font-label-sm text-label-sm hover:text-on-surface" onclick="copySnippet()">
+<span class="material-symbols-outlined text-[14px]" id="copyIcon">content_copy</span>
+<span id="copyText">Copy</span>
+</button>
+<button class="flex items-center gap-1 rounded bg-primary px-2.5 py-1 font-label-sm text-label-sm font-semibold text-on-primary hover:bg-primary-fixed-dim" onclick="loadToPlayground()">
+<span class="material-symbols-outlined text-[14px]">play_arrow</span>
+                    Run in Sandbox
+                  </button>
+</div>
+</div>
+<!-- Syntax Highlighting -->
+<div class="overflow-x-auto p-space-md font-code-block text-code-block">
+<pre class="leading-relaxed"><span class="text-on-surface-variant"># Example: Squaring even numbers</span>
+<span class="text-on-surface-variant"># Method 1: Traditional Loop</span>
+<span class="text-secondary">even_squares</span> = []
+<span class="text-primary">for</span> num <span class="text-primary">in</span> <span class="text-tertiary">range</span>(<span class="text-tertiary-fixed-dim">10</span>):
+    <span class="text-primary">if</span> num % <span class="text-tertiary-fixed-dim">2</span> == <span class="text-tertiary-fixed-dim">0</span>:
+        <span class="text-secondary">even_squares</span>.<span class="text-tertiary">append</span>(num ** <span class="text-tertiary-fixed-dim">2</span>)
+
+<span class="text-on-surface-variant"># Method 2: Pythonic List Comprehension (Faster, cleaner)</span>
+<span class="text-secondary">even_squares</span> = [num ** <span class="text-tertiary-fixed-dim">2</span> <span class="text-primary">for</span> num <span class="text-primary">in</span> <span class="text-tertiary">range</span>(<span class="text-tertiary-fixed-dim">10</span>) <span class="text-primary">if</span> num % <span class="text-tertiary-fixed-dim">2</span> == <span class="text-tertiary-fixed-dim">0</span>]
+<span class="text-tertiary">print</span>(<span class="text-secondary">even_squares</span>)  <span class="text-on-surface-variant"># Output: [0, 4, 16, 36, 64]</span></pre>
+</div>
+</div>
+<!-- Collapsible Line-by-Line Breakdown -->
+<div class="rounded-lg bg-surface-container-low p-space-md">
+<button class="flex w-full items-center justify-between text-left font-label-md text-label-md text-on-surface hover:text-primary" onclick="toggleBreakdown()">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">account_tree</span>
+                  Line-by-Line Syntax Anatomy
+                </span>
+<span class="material-symbols-outlined text-[20px] transition-transform" id="breakdownCaret">expand_more</span>
+</button>
+<div class="mt-space-sm hidden space-y-2 pt-space-xs font-body-sm text-body-sm text-on-surface-variant" id="breakdownContent">
+<div class="flex items-start gap-2">
+<span class="rounded bg-surface-container-highest px-1.5 font-code-inline text-code-inline text-primary">num ** 2</span>
+<span><strong>Expression:</strong> What gets evaluated and added to the resulting collection.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="rounded bg-surface-container-highest px-1.5 font-code-inline text-code-inline text-secondary">for num in range(10)</span>
+<span><strong>Iteration:</strong> The sequence or iterable generator driving the loop.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="rounded bg-surface-container-highest px-1.5 font-code-inline text-code-inline text-tertiary">if num % 2 == 0</span>
+<span><strong>Predicate Filter:</strong> Optional conditional filter executed before expression evaluation.</span>
+</div>
+</div>
+</div>
+<!-- Memory Analysis Note & Visual Meter -->
+<div class="flex flex-col gap-space-sm rounded-lg bg-surface-container-low p-space-md">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">analytics</span>
+                  Memory Analysis: List vs Generator Evaluation
+                </span>
+<span class="font-label-sm text-label-sm text-primary">99.9% Memory Reduction</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Lists instantiate and hold all values in RAM at once (<code class="font-code-inline text-code-inline text-on-surface">O(N)</code> memory footprint). A Generator Expression uses lazy iteration via the iterator protocol (<code class="font-code-inline text-code-inline text-primary">O(1)</code> space).
+              </p>
+<!-- Memory Savings Visual Meter -->
+<div class="space-y-1.5 pt-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">List [x for x in 1M]: <strong class="text-error">~9.0 MB</strong></span>
+<span class="text-on-surface-variant">Generator (x for x in 1M): <strong class="text-primary">104 Bytes</strong></span>
+</div>
+<div class="relative h-3 w-full overflow-hidden rounded-full bg-surface-container-high">
+<div class="h-full bg-error" style="width: 100%;"></div>
+<div class="absolute left-0 top-0 h-full bg-primary" style="width: 0.12%; min-width: 4px;"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Full RAM Consumption (List)</span>
+<span class="text-primary font-semibold">Constant Footprint (Generator)</span>
+</div>
+</div>
+</div>
+<!-- Embedded Interactive MCQ Quiz Widget -->
+<div class="flex flex-col gap-space-sm rounded-xl bg-surface-container-lowest p-space-md">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1.5 font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary">quiz</span>
+                  Quick Check: Socratic Verification
+                </span>
+<span class="rounded bg-primary-container/20 px-2 py-0.5 font-label-sm text-label-sm text-primary">+50 XP</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                What will <code class="rounded bg-surface-container px-1 font-code-inline text-code-inline text-tertiary">sum(x for x in range(1_000_000))</code> do compared to <code class="rounded bg-surface-container px-1 font-code-inline text-code-inline text-tertiary">sum([x for x in range(1_000_000)])</code>?
+              </p>
+<!-- MCQ Options -->
+<div class="flex flex-col gap-2 pt-1" id="quizOptions">
+<!-- Option A -->
+<button class="flex items-center justify-between rounded-lg bg-surface-container px-space-md py-2.5 text-left transition-colors hover:bg-surface-container-high" id="quizOptA" onclick="selectQuizOption('A')">
+<div class="flex items-center gap-2">
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-surface-container-highest font-label-sm text-label-sm text-on-surface">A</span>
+<span class="font-body-sm text-body-sm text-on-surface">It will run 10x slower because Python cannot optimize parentheses</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant opacity-0" id="iconA">close</span>
+</button>
+<!-- Option B (Selected / Correct) -->
+<button class="flex items-center justify-between rounded-lg bg-surface-container-high px-space-md py-2.5 text-left transition-colors hover:bg-surface-container-high" id="quizOptB" onclick="selectQuizOption('B')">
+<div class="flex items-center gap-2">
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-primary font-label-sm text-label-sm font-semibold text-on-primary">B</span>
+<span class="font-body-sm text-body-sm text-on-surface">It uses O(1) memory by yielding items lazily without creating a massive list in RAM</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-primary" id="iconB">check_circle</span>
+</button>
+<!-- Option C -->
+<button class="flex items-center justify-between rounded-lg bg-surface-container px-space-md py-2.5 text-left transition-colors hover:bg-surface-container-high" id="quizOptC" onclick="selectQuizOption('C')">
+<div class="flex items-center gap-2">
+<span class="flex h-5 w-5 items-center justify-center rounded-full bg-surface-container-highest font-label-sm text-label-sm text-on-surface">C</span>
+<span class="font-body-sm text-body-sm text-on-surface">It causes a TypeError in Python 3 because generators cannot be passed to sum()</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant opacity-0" id="iconC">close</span>
+</button>
+</div>
+<!-- Quiz Feedback Badge -->
+<div class="flex items-center gap-2 rounded-lg bg-primary/10 p-2.5 text-primary" id="quizFeedback">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+<span class="font-body-sm text-body-sm font-medium">Correct! Excellent intuition for AI data pipelines — never buffer what you can stream!</span>
+</div>
+</div>
+<!-- Action Toolbar for AI Response -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="flex items-center gap-1 rounded bg-surface-container-low px-2.5 py-1.5 font-label-sm text-label-sm text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface">
+<span class="material-symbols-outlined text-[15px]">translate</span>
+                  Explain in Roman Urdu
+                </button>
+<button class="flex items-center gap-1 rounded bg-surface-container-low px-2.5 py-1.5 font-label-sm text-label-sm text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface">
+<span class="material-symbols-outlined text-[15px]">exercise</span>
+                  Generate Coding Exercise
+                </button>
+<button class="flex items-center gap-1 rounded bg-surface-container-low px-2.5 py-1.5 font-label-sm text-label-sm text-on-surface-variant transition-colors hover:bg-surface-container-high hover:text-on-surface" onclick="copySnippet()">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+                  Copy Code
+                </button>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="flex items-center gap-1 rounded p-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Bookmark Explanation">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+<button class="flex items-center gap-1 rounded p-1.5 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" title="Regenerate with Alternative Context">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Follow-Ups & Composer Bar -->
+<div class="sticky bottom-4 flex flex-col gap-space-sm rounded-xl bg-surface-container-low p-space-md shadow-xl">
+<!-- Suggested Prompts / Chips -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Suggestions:</span>
+<button class="rounded-full bg-surface-container-high px-3 py-1 font-label-sm text-label-sm text-on-surface transition-colors hover:bg-primary hover:text-on-primary" onclick="insertPrompt('Show me a real-world data science example with Pandas')">
+            Pandas pipeline example
+          </button>
+<button class="rounded-full bg-surface-container-high px-3 py-1 font-label-sm text-label-sm text-on-surface transition-colors hover:bg-primary hover:text-on-primary" onclick="insertPrompt('Give me a practice exercise with unit tests')">
+            Practice exercise with tests
+          </button>
+<button class="rounded-full bg-surface-container-high px-3 py-1 font-label-sm text-label-sm text-on-surface transition-colors hover:bg-primary hover:text-on-primary" onclick="insertPrompt('How does sys.getsizeof() measure nested objects?')">
+            sys.getsizeof() mechanics
+          </button>
+</div>
+<!-- Mode Selectors -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 rounded-lg bg-surface-container p-1">
+<button class="flex items-center gap-1 rounded-md bg-secondary px-2.5 py-1 font-label-sm text-label-sm font-semibold text-on-secondary shadow-sm">
+<span class="material-symbols-outlined text-[14px]">school</span>
+              Tutor Mode
+            </button>
+<button class="flex items-center gap-1 rounded-md px-2.5 py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[14px]">rate_review</span>
+              Code Reviewer
+            </button>
+<button class="flex items-center gap-1 rounded-md px-2.5 py-1 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[14px]">bug_report</span>
+              Debug Mode
+            </button>
+</div>
+<div class="hidden sm:flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+<span>Gemini 2.5 Pro: 1,420 / 32,000 Tokens</span>
+</div>
+</div>
+<!-- Text Input & Send Trigger -->
+<div class="relative flex items-end gap-2 rounded-lg bg-surface-container-lowest p-2">
+<button class="flex h-9 w-9 items-center justify-center rounded-lg text-on-surface-variant transition-colors hover:bg-surface-container hover:text-on-surface" title="Attach file or code trace">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<textarea class="w-full resize-none bg-transparent p-1 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" id="composerInput" placeholder="Ask PyAI Tutor anything about Python, NumPy, PyTorch, RAG, or paste your code error..." rows="2"></textarea>
+<div class="flex items-center gap-2">
+<span class="hidden md:inline font-label-sm text-label-sm text-on-surface-variant">⌘↵</span>
+<button class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary text-on-primary transition-all hover:bg-primary-fixed-dim" title="Send message">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: Sandbox, Hints, Tests & Context (~42%) -->
+<aside class="flex flex-col gap-space-md xl:col-span-5">
+<!-- Top Interactive Tab System -->
+<div class="flex flex-col overflow-hidden rounded-xl bg-surface-container shadow-md">
+<!-- Tab Bar -->
+<div class="flex items-center justify-between bg-surface-container-high px-space-sm py-1.5">
+<div class="flex items-center gap-1">
+<button class="flex items-center gap-1.5 rounded-lg bg-surface-container px-3 py-1.5 font-label-md text-label-md font-semibold text-primary" id="tabPlayground" onclick="switchSandboxTab('playground')">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+              Python Playground
+            </button>
+<button class="flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface" id="tabHints" onclick="switchSandboxTab('hints')">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span>
+              Live Hints &amp; Tests
+            </button>
+<button class="flex items-center gap-1.5 rounded-lg px-3 py-1.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface" id="tabRoadmap" onclick="switchSandboxTab('roadmap')">
+<span class="material-symbols-outlined text-[16px]">alt_route</span>
+              Topic Roadmap
+            </button>
+</div>
+<div class="flex items-center gap-1">
+<button class="flex items-center gap-1 rounded bg-primary px-3 py-1 font-label-md text-label-md font-semibold text-on-primary shadow-sm hover:bg-primary-fixed-dim" onclick="runCodeSimulation()">
+<span class="material-symbols-outlined text-[16px]">play_arrow</span>
+              Run Code
+            </button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface" onclick="resetEditor()" title="Reset Code">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+</button>
+</div>
+</div>
+<!-- Tab Panel 1: Playground / Monaco-style Code View -->
+<div class="flex flex-col" id="panelPlayground">
+<!-- Editor Header Meta -->
+<div class="flex items-center justify-between bg-surface-container-lowest px-space-md py-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="font-code-inline text-code-inline text-tertiary">memory_benchmark.py</span>
+<span class="rounded bg-surface-container px-1 text-on-surface-variant">UTF-8</span>
+</div>
+<div class="flex items-center gap-2">
+<span>Lines: 15</span>
+<span>Memory: Python 3.12</span>
+</div>
+</div>
+<!-- Simulated Code Editor with Line Numbers -->
+<div class="flex bg-surface-container-lowest font-code-block text-code-block">
+<!-- Line Numbers -->
+<div class="select-none bg-surface-container-lowest/60 px-3 py-space-sm text-right font-code-block text-code-block text-on-surface-variant/40">
+              1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15
+            </div>
+<!-- Code Content Area -->
+<div class="flex-1 overflow-x-auto p-space-sm pl-2">
+<pre class="leading-relaxed"><span class="text-primary">import</span> sys
+
+<span class="text-on-surface-variant"># 1. Evaluate memory allocation for 1,000,000 elements</span>
+<span class="text-secondary">list_comp</span> = [num ** <span class="text-tertiary-fixed-dim">2</span> <span class="text-primary">for</span> num <span class="text-primary">in</span> <span class="text-tertiary">range</span>(<span class="text-tertiary-fixed-dim">1000000</span>)]
+<span class="text-secondary">gen_exp</span> = (num ** <span class="text-tertiary-fixed-dim">2</span> <span class="text-primary">for</span> num <span class="text-primary">in</span> <span class="text-tertiary">range</span>(<span class="text-tertiary-fixed-dim">1000000</span>))
+
+<span class="text-on-surface-variant"># 2. Inspect raw byte size in CPython heap</span>
+<span class="text-secondary">list_size</span> = sys.<span class="text-tertiary">getsizeof</span>(<span class="text-secondary">list_comp</span>)
+<span class="text-secondary">gen_size</span> = sys.<span class="text-tertiary">getsizeof</span>(<span class="text-secondary">gen_exp</span>)
+
+<span class="text-tertiary">print</span>(<span class="text-secondary">list_comp</span>[:<span class="text-tertiary-fixed-dim">5</span>])
+<span class="text-tertiary">print</span>(<span class="text-primary-fixed">f"Size of List: {list_size:,} bytes"</span>)
+<span class="text-tertiary">print</span>(<span class="text-primary-fixed">f"Size of Generator: {gen_size} bytes (99.9% saved!)"</span>)</pre>
+</div>
+</div>
+<!-- Terminal Output Section -->
+<div class="flex flex-col bg-surface-container-high/40">
+<div class="flex items-center justify-between bg-surface-container-high px-space-md py-1.5 font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">terminal</span>
+                Interactive stdout
+              </span>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="clearConsole()">Clear</button>
+</div>
+<div class="p-space-md font-code-block text-code-block space-y-1" id="terminalBody">
+<div class="text-primary-fixed-dim">&gt;&gt;&gt; [0, 1, 4, 9, 16]</div>
+<div class="text-on-surface">&gt;&gt;&gt; Size of List: 8,448,728 bytes</div>
+<div class="text-tertiary">&gt;&gt;&gt; Size of Generator: 104 bytes (99.9% memory saved!)</div>
+<div class="pt-2 font-label-sm text-label-sm text-on-surface-variant">
+                [Process finished with exit code 0 — Execution time: 18ms]
+              </div>
+</div>
+</div>
+</div>
+<!-- Tab Panel 2: Live Hints & Tests (Hidden by default) -->
+<div class="hidden p-space-md space-y-space-md" id="panelHints">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Unit Verification Tests</span>
+<span class="rounded bg-primary/20 px-2 py-0.5 font-label-sm text-label-sm text-primary">2 / 2 Passed</span>
+</div>
+<div class="space-y-2">
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">test_generator_is_lazy</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Passed (2ms)</span>
+</div>
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">test_even_filtering_exact_parity</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">Passed (1ms)</span>
+</div>
+</div>
+<div class="rounded-lg bg-surface-container-lowest p-3">
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-tertiary">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Pro Tip from PyAI
+            </div>
+<p class="pt-1 font-body-sm text-body-sm text-on-surface-variant">
+              When using <code class="font-code-inline text-code-inline text-secondary">sum()</code>, <code class="font-code-inline text-code-inline text-secondary">min()</code>, or <code class="font-code-inline text-code-inline text-secondary">max()</code>, you don't need double parentheses: <code class="font-code-inline text-code-inline text-primary">sum(x for x in data)</code> is valid syntax!
+            </p>
+</div>
+</div>
+<!-- Tab Panel 3: Topic Roadmap (Hidden by default) -->
+<div class="hidden p-space-md space-y-space-sm" id="panelRoadmap">
+<span class="font-headline-sm text-headline-sm text-on-surface">Python Optimization Sprint</span>
+<div class="space-y-2 pt-2">
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">1. Basic Loops vs Iterables</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary">100%</span>
+</div>
+<div class="flex items-center justify-between rounded-lg bg-surface-container-high p-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">play_circle</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">2. Comprehensions &amp; Generators</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary">Active</span>
+</div>
+<div class="flex items-center justify-between rounded-lg bg-surface-container-low p-2.5 opacity-60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">lock</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">3. Itertools &amp; Streaming Generators</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Next</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lesson Summary & Progression Card -->
+<div class="flex flex-col gap-space-sm rounded-xl bg-surface-container p-space-md shadow-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="flex h-7 w-7 items-center justify-center rounded-lg bg-secondary/20 text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Lesson Takeaways</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Module 3 of 12</span>
+</div>
+<ul class="space-y-1.5 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+<span>Use comprehensions for concise, fast list transformation.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+<span>Always switch to generator expressions for large data streams to preserve memory.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">done</span>
+<span>Keep comprehensions under 2 lines — readability always beats cleverness.</span>
+</li>
+</ul>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="flex items-center gap-1.5 rounded-lg bg-primary px-3.5 py-2 font-label-md text-label-md font-semibold text-on-primary shadow-sm hover:bg-primary-fixed-dim" id="markCompletedBtn" onclick="markLessonComplete()">
+<span class="material-symbols-outlined text-[18px]" id="completeIcon">check</span>
+<span id="completeText">Mark Lesson as Completed</span>
+</button>
+<a class="flex items-center gap-1 font-label-md text-label-md text-tertiary transition-colors hover:text-on-surface" href="#">
+<span>Next: Lambda &amp; Map/Filter</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Quick AI Engineering Insight Card -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low p-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">AI Pipeline Note</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">PyTorch DataLoader</span>
+</div>
+<p class="pt-2 font-body-sm text-body-sm text-on-surface-variant">
+          In LLM &amp; Vision workflows, passing generator iterables into dataset batch loaders prevents GPU driver CUDA out-of-memory crashes before tensor collation.
+        </p>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  function switchSandboxTab(tabName) {
+    const panels = {
+      playground: document.getElementById('panelPlayground'),
+      hints: document.getElementById('panelHints'),
+      roadmap: document.getElementById('panelRoadmap')
+    };
+    const tabs = {
+      playground: document.getElementById('tabPlayground'),
+      hints: document.getElementById('tabHints'),
+      roadmap: document.getElementById('tabRoadmap')
+    };
+
+    Object.keys(panels).forEach(key => {
+      if (panels[key]) panels[key].classList.add('hidden');
+      if (tabs[key]) {
+        tabs[key].classList.remove('bg-surface-container', 'text-primary', 'font-semibold');
+        tabs[key].classList.add('text-on-surface-variant');
+      }
+    });
+
+    if (panels[tabName]) panels[tabName].classList.remove('hidden');
+    if (tabs[tabName]) {
+      tabs[tabName].classList.add('bg-surface-container', 'text-primary', 'font-semibold');
+      tabs[tabName].classList.remove('text-on-surface-variant');
+    }
+  }
+
+  function runCodeSimulation() {
+    const term = document.getElementById('terminalBody');
+    if (!term) return;
+    term.innerHTML = '<div class="text-tertiary animate-pulse">&gt;&gt;&gt; Executing script in sandbox...</div>';
+    setTimeout(() => {
+      term.innerHTML = `
+        <div class="text-primary-fixed-dim">&gt;&gt;&gt; [0, 1, 4, 9, 16]</div>
+        <div class="text-on-surface">&gt;&gt;&gt; Size of List: 8,448,728 bytes</div>
+        <div class="text-tertiary">&gt;&gt;&gt; Size of Generator: 104 bytes (99.9% memory saved!)</div>
+        <div class="pt-2 font-label-sm text-label-sm text-primary">
+          [Process finished with exit code 0 — Execution time: 14ms]
+        </div>
+      `;
+    }, 400);
+  }
+
+  function clearConsole() {
+    const term = document.getElementById('terminalBody');
+    if (term) term.innerHTML = '<div class="text-on-surface-variant">&gt;&gt;&gt; Console ready. Click "Run Code" to execute.</div>';
+  }
+
+  function resetEditor() {
+    clearConsole();
+  }
+
+  function toggleBreakdown() {
+    const content = document.getElementById('breakdownContent');
+    const caret = document.getElementById('breakdownCaret');
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      caret.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      caret.classList.remove('rotate-180');
+    }
+  }
+
+  function toggleBookmark() {
+    const icon = document.getElementById('bookmarkIcon');
+    const text = document.getElementById('bookmarkText');
+    if (text.innerText === 'Bookmark Topic') {
+      text.innerText = 'Bookmarked';
+      icon.innerText = 'bookmark';
+      icon.classList.add('text-primary');
+    } else {
+      text.innerText = 'Bookmark Topic';
+      icon.innerText = 'bookmark_border';
+      icon.classList.remove('text-primary');
+    }
+  }
+
+  function copySnippet() {
+    const copyText = document.getElementById('copyText');
+    const copyIcon = document.getElementById('copyIcon');
+    copyText.innerText = 'Copied!';
+    copyIcon.innerText = 'check';
+    setTimeout(() => {
+      copyText.innerText = 'Copy';
+      copyIcon.innerText = 'content_copy';
+    }, 1800);
+  }
+
+  function loadToPlayground() {
+    switchSandboxTab('playground');
+    runCodeSimulation();
+  }
+
+  function insertPrompt(text) {
+    const input = document.getElementById('composerInput');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  function selectQuizOption(option) {
+    const fb = document.getElementById('quizFeedback');
+    const optA = document.getElementById('quizOptA');
+    const optB = document.getElementById('quizOptB');
+    const optC = document.getElementById('quizOptC');
+    const iconA = document.getElementById('iconA');
+    const iconB = document.getElementById('iconB');
+    const iconC = document.getElementById('iconC');
+
+    [optA, optB, optC].forEach(el => {
+      el.classList.remove('bg-surface-container-high', 'bg-error/10');
+      el.classList.add('bg-surface-container');
+    });
+    iconA.classList.add('opacity-0');
+    iconC.classList.add('opacity-0');
+
+    if (option === 'B') {
+      optB.classList.add('bg-surface-container-high');
+      fb.classList.remove('hidden');
+      fb.innerHTML = '<span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-sm text-body-sm font-medium">Correct! Excellent intuition for AI data pipelines — never buffer what you can stream!</span>';
+    } else {
+      fb.classList.remove('hidden');
+      fb.innerHTML = '<span class="material-symbols-outlined text-[20px] text-error">cancel</span><span class="font-body-sm text-body-sm font-medium text-error">Not quite. Generators avoid loading all elements into RAM at once. Option B is correct.</span>';
+    }
+  }
+
+  function markLessonComplete() {
+    const btn = document.getElementById('markCompletedBtn');
+    const text = document.getElementById('completeText');
+    const icon = document.getElementById('completeIcon');
+    btn.classList.remove('bg-primary', 'hover:bg-primary-fixed-dim');
+    btn.classList.add('bg-surface-container-highest', 'text-primary');
+    text.innerText = 'Completed (+150 XP)';
+    icon.innerText = 'check_circle';
+  }
+</script></main></div></body></html>
